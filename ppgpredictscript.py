@@ -1,4 +1,5 @@
 from typing import Any
+from unicodedata import numeric
 import numpy as np
 import joblib
 from flask import Flask, request, render_template, redirect
@@ -16,7 +17,7 @@ def ValuePredictor(playername):
     playerstats = pd.DataFrame(players.loc[players['Player'] == playername])
     print(playerstats)
     predictionarray = [playerstats.iat[0,4],playerstats.iat[0,3],playerstats.iat[0,5],playerstats.iat[0,9],playerstats.iat[0,8]]
-    predictionarray = np.array(predictionarray).reshape(1,-1)
+    predictionarray = np.array(predictionarray).reshape(1,-1).astype(float)
     print(predictionarray)
     loaded_model = joblib.load(open("ppgpredictormodel2.0.pkl", "rb"))
     result = loaded_model.predict(predictionarray)
