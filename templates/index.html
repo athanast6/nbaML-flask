@@ -1,0 +1,28 @@
+
+<html>
+<head>
+  <link rel="stylesheet" href="/static/mystyle.css">
+</head>
+<body>
+    <h3>NBA PPG Prediction Form</h3>
+
+<br><br>
+ 
+<div>
+  <form action="/result" method="POST">
+    <label for="age">Enter Player's Name</label>
+    <input type="text" id="playername" name="playername">
+    <br>
+    <button type = 'sumbit'>Search Player</button>
+  </form>
+</div>
+
+<br>
+<br>
+<div>
+{% if prediction %}
+<p>Player's Predicted Pts: <br> <p> {{ prediction }}</p> </p>
+{% endif %}
+</div>
+</body>
+</html>

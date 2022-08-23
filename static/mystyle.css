@@ -1,0 +1,18 @@
+body {
+    background-image: url(background.jpeg);
+    background-size: 100% 100%;
+    background-repeat: no repeat;
+}
+  
+
+div {
+    background: rgb(229, 230, 224);
+    color: rgb(18, 18, 18);
+    opacity: 0.8;
+    padding: 20px 20px 20px 20px;
+}
+
+h1 {
+    color: rgb(25, 5, 91);
+    margin-left: 20px;
+}
